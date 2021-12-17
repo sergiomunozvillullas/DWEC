@@ -1,0 +1,45 @@
+<dialog id="dialogo">
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" id="nombre" />
+	<input type="button" id="cerrar" value="cerrar"/>
+</dialog>
+
+<input type="button" id="abrir" value="Abrir cuadro Dialogo" />
+
+
+-------------------------------------
+if (document.addEventListener)
+	window.addEventListener("load",inicio)
+else if (document.attachEvent)
+	window.attachEvent("onload",inicio);
+
+function inicio(){
+	let botonAbrir=document.getElementById("abrir");
+	let botonCerrar=document.getElementById("cerrar");
+	if (document.addEventListener){
+		botonAbrir.addEventListener("click",abrirCuadro);
+		botonCerrar.addEventlistner("click",cerrarCuadro);
+	} else if (document.attachEvent){
+		botonAbrir.attachEvent("onclick",abrirCuadro);
+		botonCerrar.attachEvent("onclick",cerrarCuadro);
+	}
+}	
+	
+function abrirCuadro(){
+	let midialogo=document.getElementById("dialogo");
+	midialogo.setAttribute("open",true);
+	// midialogo.show();  // no funciona en firefox
+	// midialogo.showModal(); // no funciona en firefox
+}
+	
+	
+function cerrarCuadro(){
+	let minombre=document.getElementById("nombre").value;
+	alert(minombre);
+	let midialogo=document.getElementById("dialogo");
+	midialogo.removeAttribute("open");
+	// midialogo.close(); // no funciona en firefox
+}
+	
+	
+

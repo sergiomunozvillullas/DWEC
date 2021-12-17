@@ -1,0 +1,12 @@
+:root{
+	margin-top:10%;
+	margin-left:12%;
+	font-size:13pt;
+	font-family:Cambria;
+	line-height:1.75rem;
+	color:white;
+	background-color:blue;
+}
+label+input{
+	margin-left:2%;
+	}
